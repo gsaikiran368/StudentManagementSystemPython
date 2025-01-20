@@ -32,5 +32,8 @@ def remove_student():
         return redirect(url_for("home"))
     return f"No record found for: {rmStd}", 404
 
+# Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Use the PORT environment variable provided by Render, or default to 5000 if not set
+    port = int(os.environ.get("PORT", 15000))
+    app.run(host="0.0.0.0", port=port)
