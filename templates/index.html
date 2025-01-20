@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <h2>Student List</h2>
+    <ul>
+        {% for student in students %}
+            <li>{{ student }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Add Student</h2>
+    <form action="/add" method="post">
+        <input type="text" name="name" required>
+        <button type="submit">Add</button>
+    </form>
+    
+    <h2>Search Student</h2>
+    <form action="/search" method="post">
+        <input type="text" name="name" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    <h2>Remove Student</h2>
+    <form action="/remove" method="post">
+        <input type="text" name="name" required>
+        <button type="submit">Remove</button>
+    </form>
+</body>
+</html>
